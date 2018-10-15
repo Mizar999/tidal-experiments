@@ -1,0 +1,19 @@
+d1 $ sound "{drum*4 cp, [drum cp ~, ~ can], bd ~? bd*2}"
+
+d2 $ sound "arpy:5 arpy:2 !? !? arpy:3 ~"
+
+d3 $ chop 8 $ rev $ sound "can(7,16)"
+
+d3 $ silence
+
+d4 $ stack [density 1.5 $ sound "bd(3,5)" |+| vowel "i" |+| pan sine,
+            rev $ sound "{can:2(5,8), arpy ! arpy:3 ~}" |+| vowel "a",
+            chop 32 $ sound "casio casio:1 casio:2*2" |+| vowel "a"
+    ]
+
+d5 $ stack [
+    jux (density 2) $ sound (samples "drum arpy newnotes" (slow 2.5 "0 1 2")),
+    sound "drum(4,6)" |+| vowel (slow 1.5 "o a")
+]
+
+d6 $ n (run 4) # s "arpy"
