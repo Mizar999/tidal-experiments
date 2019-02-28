@@ -1,0 +1,18 @@
+-- SuperCollider -> SuperDirt.start -> SHIFT + ENTER
+
+-- Samples: In SuperCollider
+-- File -> Open user support directory -> downloaded-quarks -> Dirt-Samples
+
+-- bassdrum / pause / snaredrum
+d1 $ sound "bd ~ bd sd"
+
+-- Jeder Cycle dauert gleich lang unabhängig von der Anzahl der Schritte
+
+-- pause / clap 1 / pause / clap 2
+d2 $ sound "~ cp:0 ~ cp:1 ~ cp cp ~"
+
+-- nur Kanal 1 spielen
+solo 1
+
+-- nicht mehr nur Kanal 1 spielen
+unsolo 1

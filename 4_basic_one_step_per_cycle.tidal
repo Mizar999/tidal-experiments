@@ -1,0 +1,4 @@
+-- Spitze Klammern sind Gruppen, die nur 1 Step pro Cycle spielen
+d1 $ sound "bd <arpy:1 arpy:2 arpy:3>"
+
+d1 $ sound "[bd ~ [bd bd] bd, cp <cp cp:1> ~ [cp:1 cp], arpy [arpy:2 arpy:1] [<arpy:1 [arpy:3 arpy:2]> <arpy [arpy:1 arpy:2] arpy:1>], <[odx:1 odx] [odx:1 odx ~ odx:1]>]"

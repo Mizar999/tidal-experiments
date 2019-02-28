@@ -1,0 +1,7 @@
+-- Kommas erzeugen Layer die gleichzeitig gespielt werden
+d1 $ sound "[bd bd, sd ~ sd sd, ~ cp ~ cp]"
+
+d1 $ sound "[bd bd bd, sd cp sd cp, arpy arpy, odx]"
+
+-- Layer können Gruppen mit Untergruppen enthalten
+d1 $ sound "[bd bd bd, [sd sd] cp, arpy [arpy [arpy arpy] arpy arpy], odx]"

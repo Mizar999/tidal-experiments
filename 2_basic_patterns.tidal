@@ -1,0 +1,17 @@
+-- In SuperCollider
+-- File -> Open startup file
+-- Hinzufügen SuperDirt.start
+
+-- Elemente in eckigen Klammern werden zu 1 Schritt zusammengefasst
+d1 $ sound "bd [sd sd]"
+
+d1 $ sound "[bd bd] [sd sd sd]"
+
+-- Gruppen können Untergruppen enthalten
+d1 $ sound "[bd bd] [sd [cp cp] sd]"
+
+-- Alternativ können Punkte zur Gruppierung verwendet werden
+-- Die folgenden beiden Cycle sind identisch
+d1 $ sound "[bd bd] [sd sd sd] [bd sd]"
+
+d1 $ sound "bd bd . sd sd sd . bd sd"
