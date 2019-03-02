@@ -1,0 +1,28 @@
+-- Effekte entstehen durch Control Patterns. Diese können mit dem #-Operator miteinander verunden werden
+
+-- crush erzeugt einen Bitcrushing-Effekt
+d1 $ sound "bd*4" # crush "4"
+
+-- speed erhöht die Abspielgeschwindigkeit der Samples
+d1 $ sound "bd*4" # crush "4" # speed "2"
+
+-- gain verändert die Lautstärke eines Samples
+d1 $ sound "bd*4" # crush "4" # speed "2" # gain "1 0.8 0.5 0.7"
+
+-- pan spielt den auf dem linken oder rechten Lautsprecher
+d1 $ sound "bd*8" # pan "0 0.5 1 0.25 1 0.7 1 0.8"
+
+-- vowel ein Filter mit den möglichen Werten a, e, i, o, u
+d1 $ sound "bd*5" # vowel "a o i e u"
+
+-- shape wendet einen Verstärkereffekt an
+d1 $ sound "bd*4" # shape "0 0.3 0.6 0.9"
+
+-- Da Effekte (Control) Patterns sind, können diese auch transformiert werden
+d1 $ sound "bd*4" # (every 3 (rev) $ gain "1 0.8 0.5 0.7")
+
+-- Die Struktur des Patterns steht beim #-Operator immer auf der linken Seite. Somit beeinflusst die Reihenfolge der Control Patterns das Ergebnis.
+-- Die folgenden beiden Sequenzen sind identisch.
+d1 $ sound "bd bd bd bd" # gain "1 0.8 0.5 0.7"
+
+d1 $ gain "1 0.8 0.5 0.7" # sound "bd"

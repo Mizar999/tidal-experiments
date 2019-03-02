@@ -1,0 +1,16 @@
+-- * vervielfacht ein Sample, *2 spielt das Sample zum Beispiel 2 Mal pro Cycle
+d1 $ sound "bd bd"
+
+d1 $ sound "bd*2"
+
+-- / spielt ein Sample weniger oft, /2 spielt das Sample zum Beispiel nur jeden 2. Cycle
+d1 $ sound "bd/2"
+
+-- * und / können auch auf Gruppen angewandt werden
+d1 $ sound "[bd sn]*2 cp"
+
+d1 $ sound "[bd sn] cp/2"
+
+d1 $ sound "[[bd sn] cp]*2" -- das ganze Pattern 2 Mal spielen
+
+d1 $ sound "[[bd sn] cp]/2" -- das ganze Pattern wird verlangsamt

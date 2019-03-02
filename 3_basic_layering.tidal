@@ -1,7 +1,21 @@
--- Kommas erzeugen Layer die gleichzeitig gespielt werden
+-- Kommas erzeugen Layer die gleichzeitig gespielt werden (polyrhythm)
 d1 $ sound "[bd bd, sd ~ sd sd, ~ cp ~ cp]"
 
 d1 $ sound "[bd bd bd, sd cp sd cp, arpy arpy, odx]"
 
 -- Layer können Gruppen mit Untergruppen enthalten
 d1 $ sound "[bd bd bd, [sd sd] cp, arpy [arpy [arpy arpy] arpy arpy], odx]"
+
+-- Mit geschwungenen Klammern gibt das linke Pattern den Puls an.
+-- Die Pattern auf der rechten Seite überlappen. (polymetric)
+d1 $ sound "[voodoo voodoo:3, arpy arpy:4 arpy:2]"
+
+d1 $ sound "{voodoo voodoo:3, arpy arpy:4 arpy:2}"
+
+d1 $ sound "[drum bd hh bd, can can:2 can:3 can:4 can:2]"
+
+d1 $ sound "{drum bd hh bd, can can:2 can:3 can:4 can:2}"
+
+d1 $ sound "[bd sn, can:2 can:3 can:1, arpy arpy:1 arpy:2 arpy:3 arpy:5]"
+
+d1 $ sound "{bd sn, can:2 can:3 can:1, arpy arpy:1 arpy:2 arpy:3 arpy:5}"

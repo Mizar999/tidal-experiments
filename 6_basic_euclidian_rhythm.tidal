@@ -1,0 +1,14 @@
+-- 2 Klammern nach einem Pattern-Element erzeugen einen Euklidischen Rythmus.
+-- Die Anzahl an Sounds (1. Zahl) wird auf die Anzahl an Schritten (2. Zahl) verteilt.
+d1 $ sound "bd(5,8)"
+
+d1 $ sound "bd(3,8) sn*2"
+
+d1 $ sound "bd(3,8) sn(5,8)"
+
+-- Ein 3. Parameter rotiert das Pattern. Somit beginnt es an einem anderen Schritt.
+d1 $ sound "bd(5,8,2)"
+
+-- Pattern-Operationen (wie Gruppen) können auf die Parameter angewandt werden.
+-- Die folgende Sequenz alterniert zwischen 3 & 5 Sounds.
+d1 $ sound "bd([5 3]/2,8)"

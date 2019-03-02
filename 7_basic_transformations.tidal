@@ -1,0 +1,34 @@
+-- slow dehnt das Pattern auf die angegebene Anzahl an Cycles
+d1 $ slow 2 $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- fast (oder density) beschleunigt das Pattern um es der Anzahl entsprechend of pro Cycle abzuspielen
+d1 $ fast 2 $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- hurry ist ähnlich wie fast, aber spielt die Samples zuätzlich schneller ab
+d1 $ hurry 3 $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- rev spielt ein Pattern rückwärts ab, palindrome spielt es erst vorwärts und dann rückwärts ab
+d1 $ rev $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+d1 $ palindrome $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- iter beginnt das Pattern bei jedem Cycle an einer anderen Stelle und verschiebt es dann der Zahl entsprechend
+d1 $ iter 4 $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- every wendet Transformationen (und Effekte) nur jeden n-ten Cycle an
+d1 $ every 4 (fast 2) $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- jux (kurz für Juxtapose) spielt das originale Pattern in einem Lautsprecher und das transformierte Pattern im anderen Lautsprecher ab
+d1 $ jux (rev) $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+d1 $ jux (hurry 2) $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+-- chunk wendet eine Transformation (oder Effekt) jedes Mal auf ein anderes Element des Pattern an
+-- chunk 5: a bcda b cdab c dabc d abcd
+-- chunk 4: a bcda b cdab c dabc d
+-- chunk 3: ab cdab c dabc d
+-- chunk 2: ab cdab cd
+d1 $ chunk 4 (# speed 2) $ sound "alphabet:0 alphabet:1 alphabet:2 alphabet:3"
+
+-- Transformationen können mit dem Punkt-Operator verknüpft werden
+d1 $ jux (rev . (slow 1.5)) $ sound "arpy arpy:1 arpy:2 arpy:3"

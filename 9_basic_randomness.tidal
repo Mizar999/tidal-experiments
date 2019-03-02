@@ -1,0 +1,24 @@
+-- Die folgenden Funktionen haben eine bestimmte Wahrscheinlichkeit, dass etwas passiert.
+-- often 75%, sometimes 50%, rarely 25%, sometimesBy n%
+d1 $ often (# speed "2") $ sound "drum*8"
+
+d1 $ sometimes (# speed "2") $ sound "drum*8"
+
+d1 $ rarely (# speed "2") $ sound "drum*8"
+
+d1 $ sometimesBy 0.4 (# speed "2") $ sound "drum*8"
+
+-- rand gibt eine Fließkommazahl zwischen 0 & 1 zurück
+-- irand gibt eine ganze Zahl bis zum angegeben Maximalwert zurück
+d1 $ sound "arpy*16" # gain rand
+
+d1 $ sound "arpy(5,8)" # n (irand 16)
+
+-- degrade entfernt ein Sample zu 50%
+-- degradeBy n eintfernt ein Sample zu n%
+d1 $ degrade $ sound "tink*16" # gain 1.2
+
+d1 $ degradeBy 0.8 $ sound "tink*16" # gain 1.2
+
+-- Außerdem entfernt ein ? zu 50% einen Sound
+d1 $ sound "bd sn:2? bd sn?"
