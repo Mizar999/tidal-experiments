@@ -1,0 +1,28 @@
+-- Einfache Notensequenz
+p 1 $ n "c a f e"
+    # sound "supermandolin"
+
+-- Nur eine Note pro Cycle spielen
+p 1 $ n "<c a f e>"
+    # sound "supermandolin"
+
+-- Dazu eine Kopie der Sequenz zeitverschoben in anderer Tonhöhe spielen
+p 1 $ n (off 0.125 (|+ 7) "<c a f e>")
+    # sound "supermandolin"
+
+-- Der Sequenz mehr Struktur verleihen
+p 1 $ n (off 0.125 (|+ 7) "<c*2 a(3,8) f(3,8,2) e*2>")
+    # sound "supermandolin"
+    # legato 2
+
+-- In einem der Lautsprecher rückwärts abspielen
+p 1 $ jux rev
+    $ n (off 0.125 (|+ 7) "<c*2 a(3,8) f(3,8,2) e*2>")
+    # sound "supermandolin"
+    # legato 2
+
+-- Eine weitere Ebene hinzufügen
+p 1 $ jux rev
+    $ n (off 0.125 (|+ 12) $ off 0.125 (|+ 7) "<c*2 a(3,8) f(3,8,2) e*2>")
+    # sound "supermandolin"
+    # legato 2

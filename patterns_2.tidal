@@ -1,0 +1,53 @@
+-- C Dur Akkord
+p 1 $ n "c'maj"
+    # sound "supermandolin"
+    # legato 2
+
+-- Appreggio (Töne des Akkords nicht gleichzeitig, sondern nacheinander spielen)
+p 1 $ arp "up"
+    $ n "c'maj"
+    # sound "supermandolin"
+    # sustain 0.5 -- Ton kürzer halten
+
+-- Eine weitere Note hinzufügen
+p 1 $ arp "up"
+    $ n "c'maj'4"
+    # sound "supermandolin"
+    # sustain 0.5
+
+-- Einen weiteren Akkord hinzufügen (E Moll)
+p 1 $ arp "up"
+    $ n "c'maj'4 e'min"
+    # sound "supermandolin"
+    # sustain 0.5
+
+-- Appreggio ändern
+p 1 $ arp "pinkyup"
+    $ n "c'maj'4 e'min"
+    # sound "supermandolin"
+    # sustain 0.5
+
+-- Pattern für das Appreggio verwenden
+p 1 $ arp "<pinkyup down thumbup up>"
+    $ n "c'maj'4 e'min"
+    # sound "supermandolin"
+    # sustain 0.5
+    
+-- Akkorde ändern, Hall hinzufügen, in einem der Lautsprecher rückwärts abspielen
+p 1 $ jux rev
+    $ arp "<pinkyup down thumbup up>"
+    $ n "<c'maj'4 e4'min'8 f4'maj'4>"
+    # sound "supermandolin"
+    # sustain 2
+    # room 0.3
+    # sz 0.9
+
+-- Mehr Varianz hinzufügen
+p 1 $ chunk 4 (|- note 5)
+    $ jux rev
+    $ arp "<pinkyup down thumbup up>"
+    $ n "<c'maj'4 e4'min'8 f4'maj'4>"
+    # sound "supermandolin"
+    # sustain 2
+    # room 0.3
+    # sz 0.9
