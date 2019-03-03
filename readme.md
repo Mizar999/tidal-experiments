@@ -1,1 +1,1 @@
-Another kind of music exploration by programming.
+My experiments with [TidalCycles](https://tidalcycles.org/).
